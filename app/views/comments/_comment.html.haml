@@ -1,0 +1,6 @@
+.well.span9
+	%i=comment.created_at.strftime("%d/%m/%Y : %H:%M")
+	%p 
+		Napisał(a): 
+		%b=comment.user
+	%p=comment.body

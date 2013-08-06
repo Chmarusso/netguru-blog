@@ -18,5 +18,12 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @comment = Comment.new(params[:comment]) 
+    @comment.user = current_user
+    if @comment.save
+      redirect_to :back unless request.xhr?
+    else
+      render :new
+    end
   end
 end
