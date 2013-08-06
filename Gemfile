@@ -29,8 +29,8 @@ group :development do
   gem "hub", require: nil
   gem "yell-rails"
   gem "pry"
-gem 'execjs'
-gem 'therubyracer'
+  gem 'execjs'
+  gem 'therubyracer'
 end
 
 group :development, :test do

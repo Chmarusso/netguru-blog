@@ -10,3 +10,15 @@
   .post__tags-list.tagsinput
     - post.tags_array.each do |tag|
       = content_tag :span, tag, class: 'tag'
+
+.row
+  .span10
+    %h3
+      Comments
+.row
+  - post.comments.each do |comment|
+    .well.span9
+      %p 
+        Napisał(a): 
+        %b=comment.user
+      %p=comment.body

@@ -10,4 +10,5 @@ Easyblog::Application.routes.draw do
       post :mark_archived
     end
   end
+  resources :comments
 end
