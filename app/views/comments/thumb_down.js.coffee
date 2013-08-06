@@ -1,0 +1,1 @@
+($ '#vote<%=@comment.id%>').html("<%= j render(partial: 'comments/vote', locals: { comment: @comment }) %>")

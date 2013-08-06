@@ -1,0 +1,1 @@
+($ '#abusive<%=params[:id]%>').hide();

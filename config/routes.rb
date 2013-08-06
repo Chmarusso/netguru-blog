@@ -10,5 +10,11 @@ Easyblog::Application.routes.draw do
       post :mark_archived
     end
   end
-  resources :comments
+  resources :comments do
+    member do
+      post :toggle_abusive
+      post :thumb_up, :as => :thumb_up
+      post :thumb_down, :as => :thumb_down
+    end
+  end
 end

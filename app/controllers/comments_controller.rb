@@ -17,6 +17,21 @@ class CommentsController < ApplicationController
   def show
   end
 
+  def toggle_abusive
+    comment = Comment.find(params[:id])
+    comment.toggle_abusive
+  end
+
+  def thumb_up
+    Vote.thumb_up(current_user, params[:id])
+    @comment = Comment.find(params[:id])
+  end
+
+  def thumb_down
+    Vote.thumb_down(current_user, params[:id])
+    @comment = Comment.find(params[:id])
+  end
+
   def create
     @comment = Comment.new(params[:comment]) 
     @comment.user = current_user

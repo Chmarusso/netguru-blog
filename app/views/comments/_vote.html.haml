@@ -1,0 +1,5 @@
+%i=comment.total_votes
+= link_to thumb_down_comment_path(comment.id), :class => 'label label-warning', :remote => true, :method => :post do
+	%i.icon-thumbs-down.icon-white
+= link_to thumb_up_comment_path(comment.id), :class => 'label label-success', :remote => true, :method => :post do
+	%i.icon-thumbs-up.icon-white

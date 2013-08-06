@@ -1,6 +1,13 @@
 .well.span9{:id => "comment#{comment.id}"}
 	%i=comment.created_at.strftime("%d/%m/%Y : %H:%M")
+	.span2.pull-right{:id => "vote#{comment.id}"}
+		= render :partial => "comments/vote", locals: {comment: comment}
 	%p 
 		Napisał(a): 
 		%b=comment.user
 	%p=comment.body
+	- if comment.abusive
+		%p Marked as abusive
+		- if current_user.owner? comment.post
+			%p{:id => "abusive#{comment.id}"} 
+				=link_to "ignore", toggle_abusive_comment_path(comment.id), :remote => true, :method => :post
