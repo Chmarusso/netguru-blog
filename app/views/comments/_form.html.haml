@@ -1,6 +1,6 @@
 .row
   .span6
-    = simple_form_for Comment.new, html: { class: "form-inline" } do |f|
+    = simple_form_for Comment.new, html: { class: "form-inline" }, :remote => true do |f|
       = f.input :post_id, :as => :hidden, :input_html => { :value => post.id }
       = f.input :body, :label => false
       = f.button :submit, :class => "btn-primary"

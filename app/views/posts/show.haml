@@ -20,5 +20,5 @@
 = render "comments/form"
 %hr
 
-.row
+.row{:id => "commentslist"}
   = render :partial => "comments/comment", :collection => post.comments, :as => :comment
